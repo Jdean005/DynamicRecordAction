@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>53.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Dynamic Record Action Component</masterLabel>
+    <description>Use this component to create dynamic quick actions on pages without having to go through the admin panel.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="componentTitle" label="Component Title" type="String" required="true" default="Dynamic Record Action" description="Use this input to input the title of this component to make it relevant to your users!"/>
+            <property name="componentType" label="Component Type" type="String" datasource="readonly,edit" required="true" default="edit" description="Enter value for component type: readonly displays fields in a readonly capacity and edit displays fields in an edit capacity"/>
+            <property name="numberofColumns" label="Number of Columns" type="integer" min="1" max="2" required="true" default="1" description="Enter number of columns to display fields in. Only acceptable values are 1 and 2"/>
+            <property name="formDensity" label="Form Density" type="String" datasource="compact,comfy,auto" required="true" default="comfy" description="Enter the form density type for how this form should render"/>
+            <property name="fieldList" label="List of Fields" type="String" required="true" default="CreatedDate,LastModifiedById" description="Enter comma separated list of fields you would like to be displayed on your component. These fields should be the API name of your field"/>
+            <property name="dra__activateToast" label="Activate Toast Message" type="Boolean"  description="Select this checkbox as true (checked) if you want toast messages enabled"/>
+            <property name="toastTitle" label="Toast Title" type="String" required="true" default="Success!" description="Use this input to input the title of your toast message to display on success (typically - Success!)."/>
+            <property name="toastBody" label="Toast Body" type="String" required="true" default="You succcessfully updated your record using a dynamic record action LWC!" description="Use this input to input the body of your toast message to display on success (typically - you did it!)."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

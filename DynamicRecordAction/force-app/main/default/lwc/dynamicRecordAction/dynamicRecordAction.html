@@ -1,0 +1,27 @@
+<template>
+    <lightning-card>
+        <div id="inverse" class="row dark-background slds-box slds-text-heading_large" align="center">
+            <p style="font-weight:bold;text-align:center;">
+                {componentTitle} </p>
+        </div>  
+    <div class="slds-var-m-around_medium">
+        <lightning-record-form
+        record-id={recordId}
+        object-api-name={objectApiName}
+        columns={numberofColumns}
+        mode={componentType}
+        onsuccess={handleSuccess}
+        fields={formFields}
+        density={formDensity}
+        >
+        </lightning-record-form>
+    </div>
+    <p style="font-weight:bold;text-align:left;">
+        Completion Progress: {completionValue} % </br>
+        fields: {fields}
+        <span style="font-weight:bold;float:right;">
+        <lightning-progress-ring value={completionValue} variant="base-autocomplete" size='large'>
+        </lightning-progress-ring></span>
+    </p>
+    </lightning-card>
+</template>
